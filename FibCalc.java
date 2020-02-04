@@ -5,6 +5,17 @@ import java.util.Scanner;
  */
 public class FibCalc {
 
+  public static int fibRecursion(int n) {
+    // Calculate fibonacci with recursive call
+    if (n == 0)
+      return 0;
+    if (n==1 || n == 2) {
+      return 1;
+    }
+    return fibRecursion(n-2) + fibRecursion(n-1);
+
+
+  }
   /*
    * Java program to calculate Fibonacci number using loop  Iteration.
    * @return Fibonacci number
@@ -25,8 +36,9 @@ public class FibCalc {
       return fibonacci; //Fibonacci number
 
   }
-  
-    public static void main(String args[]) {
+
+
+  public static void main(String args[]) {
 
        //input to print Fibonacci series upto how many numbers
         System.out.println("Enter integer value for how many Fibonacci numbers to display: ");
@@ -36,6 +48,11 @@ public class FibCalc {
         //printing Fibonacci series upto number
         for(int i=1; i<=number; i++){
             System.out.print(fibonacci2(i) +" ");
+        }
+        System.out.println();
+
+        for(int i=1; i<=number; i++){
+            System.out.print(fibRecursion(i) +" ");
         }
 
 
